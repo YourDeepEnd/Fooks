@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fooks">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- 可选权限说明-->
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+    <!--    允许应用程序联网（必须）-->
+    <uses-permission
+        android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--    允许访问WiFi网络状态信息（必须）-->
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
+    <!--    允许读取手机状态（必须）-->
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--    允许访问网络状态（必须）-->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--    允许写手机存储（必须）-->
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:name=".utils.APPAplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:usesCleartextTraffic="true"
+
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".AddActivity">
+
+        </activity>
+        <activity android:name=".ReadActivity">
+
+        </activity>
+        <activity android:name=".RegisterActivity">
+
+        </activity>
+        <activity android:name=".LoginActivity">
+
+        </activity>
+        <activity android:name=".BookActivity">
+
+        </activity>
+        <activity android:name=".UserActivity">
+
+        </activity>
+        <!-- 注册SDKActivity -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1105602574" /> <!-- 开放平台获取的APPID -->
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:screenOrientation="fullSensor"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+    </application>
+
+</manifest>
